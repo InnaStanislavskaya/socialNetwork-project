@@ -1,13 +1,3 @@
-.profile {
-    grid-area: p;
-    border: 1px solid rgb(104, 53, 16);
-    border-radius: 30px;
-}
-
-.content {
-    padding: 20px;
-}
-
 .content div img  {
     width: 100%;
     height: 100px;

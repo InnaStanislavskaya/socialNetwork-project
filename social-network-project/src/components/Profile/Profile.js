@@ -5,7 +5,7 @@ import MyPosts from './MyPosts/MyPosts';
 
 function Profile () {
     return (
-        <div className={classes.profile}> 
+        <div> 
             <div className={classes.content}>
                 <div><img src={uzor} alt='uzor'></img></div>
             </div>
