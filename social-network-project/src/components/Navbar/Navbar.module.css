@@ -1,0 +1,9 @@
+.navbar {
+    background-color: rgba(231, 114, 31, 0.6);
+    border-radius: 30px;
+    grid-area: n;
+}
+
+.menu {
+    padding: 20px;
+}
