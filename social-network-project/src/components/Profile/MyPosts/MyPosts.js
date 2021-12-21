@@ -2,6 +2,13 @@ import React from 'react'
 import classes from './MyPosts.module.css';
 import Post from './Post/Post'
 
+let postsData = [
+    {id: 1, message: "Hello! It is my first post", likeCount: "104"},
+    {id: 2, message:  "How are you?", likeCount: "98"},
+]
+
+let postsElement = postsData.map((post) => <Post message ={post.message} likeCount={post.likeCount}/>)
+
 function MyPosts() {
     return (
         <div className={classes.myPosts}>
@@ -15,8 +22,7 @@ function MyPosts() {
                 </div>
             </div>
             <div className={classes.posts}>
-                <Post message ="Hello! It is my first post" likeCount="104"/>
-                <Post message= "How are you?" likeCount="98"/>
+                {postsElement}
             </div>
         </div>
     )

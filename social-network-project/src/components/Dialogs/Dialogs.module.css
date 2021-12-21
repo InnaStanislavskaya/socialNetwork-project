@@ -1,5 +1,3 @@
-
-
 .dialogs {
     grid-area: p;
     display: grid;
@@ -11,4 +9,9 @@
 
 .dialogs .active {
     color: rgb(31, 107, 60);
+}
+
+.dialogs a {
+    color: brown;
+    text-decoration: none;
 }
