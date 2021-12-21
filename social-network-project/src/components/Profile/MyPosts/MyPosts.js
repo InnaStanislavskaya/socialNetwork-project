@@ -5,10 +5,14 @@ import Post from './Post/Post'
 function MyPosts() {
     return (
         <div className={classes.myPosts}>
-            My posts
+            <h2>My posts</h2>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div className={classes.button}>
+                    <button>Add post</button>
+                </div>
             </div>
             <div className={classes.posts}>
                 <Post message ="Hello! It is my first post" likeCount="104"/>

@@ -1,14 +1,13 @@
 import React from 'react';
 import classes from './Profile.module.css';
-import uzor from './images/uzory.jpg'
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo'
+
 
 function Profile () {
     return (
         <div> 
-            <div className={classes.content}>
-                <div><img src={uzor} alt='uzor'></img></div>
-            </div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     )

@@ -1,10 +1,14 @@
-div {
-    color: brown;
-}
+
 
 .dialogs {
     grid-area: p;
+    display: grid;
+    grid-template-columns: 4fr 10fr;
     border: 1px solid rgb(104, 53, 16);
     border-radius: 30px;
     padding: 20px;
+}
+
+.dialogs .active {
+    color: rgb(31, 107, 60);
 }
