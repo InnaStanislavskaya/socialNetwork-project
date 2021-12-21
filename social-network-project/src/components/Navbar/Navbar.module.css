@@ -7,3 +7,19 @@
 .menu {
     padding: 20px;
 }
+
+.item {
+    color: white;
+    text-decoration: none;
+    
+}
+
+.item:hover {
+    color: rgb(170, 50, 19);
+}
+
+.item .active {
+    color: rgb(31, 107, 60);
+    text-decoration: none;
+    
+}
