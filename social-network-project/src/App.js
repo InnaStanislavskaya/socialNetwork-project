@@ -18,10 +18,13 @@ function App(props) {
           <div className='content'>
             <Routes>
               <Route exact path="/profile/*" element={<Profile 
-                state={props.state.profilePage}
+                profilePage={props.state.profilePage}
                 addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />}/>
-              <Route exact path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage}/>}/>
+              <Route exact path="/dialogs/*" element={<Dialogs 
+                state={props.state.dialogsPage}
+              />}/>
             </Routes>
           </div>
         </div>
