@@ -15,3 +15,16 @@
     color: brown;
     text-decoration: none;
 }
+
+.button {
+    text-align: right;
+}
+
+.button button {
+    background-color: rgba(28, 104, 28, 0.699);
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
