@@ -22,7 +22,7 @@ function App(props) {
                 dispatch={props.dispatch}
               />}/>
               <Route exact path="/dialogs/*" element={<Dialogs 
-                state={props.state.dialogsPage}
+                store={props.store}
               />}/>
             </Routes>
           </div>
