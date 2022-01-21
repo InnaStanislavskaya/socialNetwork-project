@@ -18,8 +18,7 @@ function App(props) {
           <div className='content'>
             <Routes>
               <Route exact path="/profile/*" element={<Profile 
-                profilePage={props.state.profilePage}
-                dispatch={props.dispatch}
+                store={props.store}
               />}/>
               <Route exact path="/dialogs/*" element={<Dialogs 
                 store={props.store}
