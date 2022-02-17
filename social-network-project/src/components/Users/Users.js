@@ -1,45 +1,66 @@
 import React from 'react';
 import classes from './Users.module.css';
+import * as axios from 'axios';
+import userPhoto from '../../../src/assets/images/User.svg.png'
 
-function Users(props) {
-
-    if(props.users.length === 0) {
-        props.setUsers([
-            {id: 1, photoUrl: 'https://i.pinimg.com/474x/86/df/9f/86df9f89ea6fb42b4655036db001f717.jpg',
-                followed: false, fullName: 'Inna', status: 'I am a girl', location: {city: 'Kharkiv', country: 'Ukrain'}},
-            {id: 2, photoUrl: 'https://i.pinimg.com/474x/86/df/9f/86df9f89ea6fb42b4655036db001f717.jpg',
-                followed: true, fullName: 'Daniel', status: 'I am a boy', location: {city: 'Kharkiv', country: 'Ukrain'}},
-            {id: 3, photoUrl: 'https://i.pinimg.com/474x/86/df/9f/86df9f89ea6fb42b4655036db001f717.jpg',
-                followed: false, fullName: 'Bonya', status: 'I am a cat', location: {city: 'Minsk', country: 'Belarus'}},
-        ])
+class Users extends React.Component {
+    componentDidMount(){
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+                this.props.setUsers(response.data.items)
+                this.props.setTotalUsersCount(response.data.totalCount);
+            });
     }
 
-    return <div>
+    onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
+                this.props.setUsers(response.data.items)
+            });
+    }
+
+
+    render(){
+
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+        let pages = [];
+        for (let i = 1; i <= pagesCount; i++){
+            pages.push(i)
+        }
+
+        return <div>
+            <div>
+                {pages.map(p => {
+                    return <span className={this.props.currentPage === p && classes.selectedPage} 
+                    onClick = {(e) => { this.onPageChanged(p) }}>{p}</span>
+                })}
+            </div>
         {
-            props.users.map(user => <div key={user.id}>
+            this.props.users.map(user => <div key={user.id}>
                 <span>
                     <div>
-                        <img src={user.photoUrl} className={classes.userPhoto} alt="avatar"/>
+                        <img src={user.photos.small != null ? user.photos.small : userPhoto} className={classes.userPhoto} alt="avatar"/>
                     </div>
                     <div>
                         { user.followed 
-                        ? <button onClick={() => {props.unfollow(user.id)}}>Unfollow</button> 
-                        : <button onClick={() => {props.follow(user.id)}}>Follow</button>}
+                        ? <button onClick={() => {this.props.unfollow(user.id)}}>Unfollow</button> 
+                        : <button onClick={() => {this.props.follow(user.id)}}>Follow</button>}
                     </div>
                 </span>
                 <span>
                     <span>
-                        <div>{user.fullName}</div>
+                        <div>{user.name}</div>
                         <div>{user.status}</div>
                     </span>
                     <span>
-                        <div>{user.location.country}</div>
-                        <div>{user.location.city}</div>
+                        <div>{"user.location.country"}</div>
+                        <div>{"user.location.city"}</div>
                     </span>
                 </span>
             </div>)
         }
     </div>
+    } 
 }
 
 export default Users
