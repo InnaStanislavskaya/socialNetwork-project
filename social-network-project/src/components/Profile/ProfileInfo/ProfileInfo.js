@@ -11,13 +11,18 @@ const ProfileInfo = (props) => {
     return (
         <div className={classes.content}>
             <div><img src={uzor} alt='uzor'></img></div>
-            <div>
-                <div>aboutMe:{props.profile.aboutMe}</div>
-                <div>facebook: {props.profile.contacts.facebook}</div>
-                <div>github: {props.profile.contacts.github}</div>
-                <div>instagram: {props.profile.contacts.instagram}</div>
+            <div className={classes.profile}>
+                <div>
+                    <div><b>fullName:</b> {props.profile.fullName}</div>
+                    <div><b>aboutMe:</b> {props.profile.aboutMe}</div>
+                    <div><b>facebook:</b> {props.profile.contacts.facebook}</div>
+                    <div><b>github:</b> {props.profile.contacts.github}</div>
+                    <div><b>instagram:</b> {props.profile.contacts.instagram}</div>
+                </div>
+                <div>
+                    <img src={props.profile.photos.small} alt='avatar' className={classes.photo}/>
+                </div>
             </div>
-            <img src={props.profile.photos.small} className={classes.photo}/>
         </div>
     )
 }
