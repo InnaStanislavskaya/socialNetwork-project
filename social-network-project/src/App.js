@@ -18,8 +18,8 @@ function App(props) {
           <Navbar/>
           <div className='content'>
             <Routes>
-              <Route exact path="/" element={<ProfileContainer/>}/>
               <Route exact path="/profile/*" element={<ProfileContainer/>}/>
+              <Route exact path="/profile/:userId" element={<ProfileContainer/>}/>
               <Route exact path="/dialogs/*" element={<DialogsContainer/>}/>
               <Route exact path="/users/*" element={<UsersContainer/>}/>
             </Routes>
