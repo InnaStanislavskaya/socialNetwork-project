@@ -3,6 +3,7 @@ import classes from './Users.module.css';
 import userPhoto from '../../../src/assets/images/User.svg.png';
 import {NavLink} from 'react-router-dom';
 import { usersAPI } from '../../api/api';
+import { follow } from '../../Redux/users-reducer';
 
 
 let Users = (props) => {
@@ -34,24 +35,18 @@ let Users = (props) => {
                 <div>
                     { user.followed 
                     ? <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
-                        props.toggleFollowingProgress(true, user.id);
-                        usersAPI.unfollowUsers(user.id)
-                            .then(data => {
-                                if (data.resultCode === 0) {
-                                    props.unfollow(user.id);
-                                }
-                                props.toggleFollowingProgress(false, user.id)
-                            });
+                        props.unfollow(user.id)
                     }}>Unfollow</button> 
                     : <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
-                        props.toggleFollowingProgress(true, user.id)
-                        usersAPI.followUsers(user.id)
-                            .then(data => {
-                                if (data.resultCode === 0) {
-                                    props.follow(user.id);
-                                }
-                                props.toggleFollowingProgress(false, user.id)
-                            });
+                        props.follow(user.id)
+                        // props.toggleFollowingProgress(true, user.id)
+                        // usersAPI.followUsers(user.id)
+                        //     .then(data => {
+                        //         if (data.resultCode === 0) {
+                        //             props.follow(user.id);
+                        //         }
+                        //         props.toggleFollowingProgress(false, user.id)
+                        //     });
                     }}>Follow</button>}
                 </div>
             </span>
