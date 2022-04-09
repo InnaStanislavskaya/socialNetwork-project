@@ -8,6 +8,7 @@ import {
     useNavigate,
     useParams,
 } from "react-router-dom";
+import {withAuthRedirect} from '../../hoc/AuthRedirect';
 
 
 
@@ -27,9 +28,10 @@ class ProfileContainer extends React.Component {
     }
 }
 
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
+
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth,
 })
 
 function withRouter(Component) {
@@ -48,6 +50,6 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-export default connect(mapStateToProps, {getUserProfile})(withRouter(ProfileContainer))
+export default connect(mapStateToProps, {getUserProfile})(withRouter(AuthRedirectComponent))
 
 // export default connect(mapStateToProps, {setUserProfile}) (WithUrlDataContainerComponent)
