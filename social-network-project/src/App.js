@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import Login from './components/Login/Login';
 
 
 
@@ -23,6 +24,7 @@ function App(props) {
               <Route exact path="/profile/:userId" element={<ProfileContainer/>}/>
               <Route exact path="/dialogs/*" element={<DialogsContainer/>}/>
               <Route exact path="/users/*" element={<UsersContainer/>}/>
+              <Route exact path="/login/*" element={<Login/>}/>
             </Routes>
           </div>
         </div>
