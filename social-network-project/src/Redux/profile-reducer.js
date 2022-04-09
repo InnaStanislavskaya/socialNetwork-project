@@ -49,13 +49,6 @@ export let addPostActionCreator = () => ({ type: ADD_POST})
 export let updateNewPostTextActionCreator = (text) =>
         ({ type: UPDATE_NEW_POST_TEXT, newText: text})
 export let setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
-// export let getUserProfile = (userId) = (dispatch) => {
-//     usersAPI.getProfile(userId)
-//         .then(response => {
-//                 dispatch(setUserProfile(response.data))
-//             });
-// }
-
 export let getUserProfile = (userId) => {
     return (dispatch) => {
         usersAPI.getProfile(userId)
