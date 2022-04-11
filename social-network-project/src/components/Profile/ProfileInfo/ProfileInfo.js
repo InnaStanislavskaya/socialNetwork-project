@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={classes.content}>
             <div><img src={uzor} alt='uzor'></img></div>
-            <ProfileStatus status={'Hello world!'}/>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             <div className={classes.profile}>
                 <div>
                     <div><b>fullName:</b> {props.profile.fullName}</div>
