@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './ProfileInfo.module.css';
-import uzor from '../images/uzory.jpg'
+import uzor from '../images/uzory.jpg';
+import ProfileStatus from './ProfileStatus';
 
 
 const ProfileInfo = (props) => {
@@ -11,6 +12,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={classes.content}>
             <div><img src={uzor} alt='uzor'></img></div>
+            <ProfileStatus status={'Hello world!'}/>
             <div className={classes.profile}>
                 <div>
                     <div><b>fullName:</b> {props.profile.fullName}</div>
