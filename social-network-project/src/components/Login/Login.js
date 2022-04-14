@@ -3,7 +3,6 @@ import { reduxForm, Field } from 'redux-form';
 
 
 const LoginForm = (props) => {
-    console.log("rerender")
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
