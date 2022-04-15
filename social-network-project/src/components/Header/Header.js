@@ -9,7 +9,8 @@ function Header (props) {
             <div className={classes.logo}>
                 <div>STAN_Network</div>
                 <div className={classes.login}>
-                    { props.isAuth ? props.login
+                    { props.isAuth ? 
+                    <div> {props.login} - <button onClick = {props.logout}>Log out</button></div>
                     : <NavLink to={'/login'}>LOGIN</NavLink> }
                 </div>
             </div>

@@ -20,7 +20,7 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <Field type={"checkbox"} name ={"rememberMe"} 
-                    validate ={[required]} component ={ElementForm} typeForm={"input"}/> remember me
+                    component ={ElementForm} typeForm={"input"}/> remember me
             </div>
             <div>
                 <button>Login</button>
