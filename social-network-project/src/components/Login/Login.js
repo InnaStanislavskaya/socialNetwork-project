@@ -5,11 +5,12 @@ import { ElementForm } from '../common/FormsControls/FormsControls';
 import {connect} from 'react-redux';
 import {login} from '../../Redux/auth-reducer';
 import {Navigate} from 'react-router-dom';
+import classes from "./Login.module.css";
 
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={classes.formLogin}>
             <div>
                 <Field placeholder={"Email"} name ={"email"} 
                     validate ={[required]} component ={ElementForm} typeForm={"input"}/>
@@ -20,7 +21,8 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <Field type={"checkbox"} name ={"rememberMe"} 
-                    component ={ElementForm} typeForm={"input"}/> remember me
+                    component ={ElementForm} typeForm={"input"}/> 
+                    remember me
             </div>
             <div>
                 <button>Login</button>
@@ -42,7 +44,7 @@ const Login = (props) => {
     }
 
     return <div>
-        <h1>LOGIN</h1>
+        <h1>Enter the site</h1>
         <LoginReduxForm onSubmit={onSubmit}/>
     </div>
 }

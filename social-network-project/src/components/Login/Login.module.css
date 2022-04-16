@@ -1,0 +1,29 @@
+.formLogin {
+    background-color: rgba(28, 104, 28, 0.322);
+    padding: 20px 10px;
+    border-radius: 20px;
+}
+
+.formLogin div {
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+.formLogin div input{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.formLogin div button {
+    background-color: rgba(28, 104, 28, 0.575);
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 2px 25px;
+}
+
+h1 {
+    text-align: center;
+}
