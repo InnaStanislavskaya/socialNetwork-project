@@ -13,15 +13,15 @@ const LoginForm = (props) => {
         <form onSubmit={props.handleSubmit} className={classes.formLogin}>
             <div>
                 <Field placeholder={"Email"} name ={"email"} 
-                    validate ={[required]} component ={ElementForm} typeForm={"input"}/>
+                    validate ={[required]} component ={ElementForm} typeform={"input"}/>
             </div>
             <div>
                 <Field placeholder={"Password"} name ={"password"} type={"password"} 
-                    validate ={[required]} component ={ElementForm} typeForm={"input"}/>
+                    validate ={[required]} component ={ElementForm} typeform={"input"}/>
             </div>
             <div>
                 <Field type={"checkbox"} name ={"rememberMe"} 
-                    component ={ElementForm} typeForm={"input"}/> 
+                    component ={ElementForm} typeform={"input"}/> 
                     remember me
             </div>
             <div>

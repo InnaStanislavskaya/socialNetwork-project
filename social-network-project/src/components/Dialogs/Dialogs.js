@@ -37,7 +37,7 @@ const AddMessageForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <div>
                 <Field name={"newMessageBody"} placeholder={'Enter your message'} 
-                    component ={ElementForm} typeForm={"textarea"} validate ={[required, maxLength50]} />
+                    component ={ElementForm} typeform={"textarea"} validate ={[required, maxLength50]} />
             </div>
             <div className={classes.button}>
                 <button>send</button>
