@@ -9,16 +9,17 @@ import {
     useParams,
 } from "react-router-dom";
 import { compose } from 'redux';
+import { withAuthRedirect } from '../../hoc/AuthRedirect';
 
 
 
 class ProfileContainer extends React.Component {
     componentDidMount(){
         let userId = this.props.router.params.userId
-        if (!userId) {
+        if (this.props.isAuth) {
             // userId = 22503;
             userId = this.props.autorizedUserId;
-        }
+        } 
         this.props.getUserProfile(userId);
         this.props.getStatus(userId)
     }
@@ -61,4 +62,5 @@ function withRouter(Component) {
 export default compose(
     connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
     withRouter,
+    withAuthRedirect,
 )(ProfileContainer)
