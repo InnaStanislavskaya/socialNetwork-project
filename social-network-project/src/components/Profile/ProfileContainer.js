@@ -16,7 +16,7 @@ import { withAuthRedirect } from '../../hoc/AuthRedirect';
 class ProfileContainer extends React.Component {
     componentDidMount(){
         let userId = this.props.router.params.userId
-        if (this.props.isAuth) {
+        if (!userId) {
             // userId = 22503;
             userId = this.props.autorizedUserId;
         } 
