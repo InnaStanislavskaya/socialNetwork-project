@@ -69,9 +69,9 @@ export let setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentP
 export let setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalUsersCount})
 export let toggleFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_PROGRESS, isFetching, userId})
 
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
     return (dispatch) => {
-        usersAPI.getUsers(currentPage, pageSize)
+        usersAPI.requestUsers(currentPage, pageSize)
             .then(data => {
                 dispatch(setUsers(data.items));
                 dispatch(setTotalUsersCount(data.totalCount));
